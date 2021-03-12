@@ -3,3 +3,10 @@
 <h2><%= @book.author %></h2>
 
 <h3><%= @book.year %><h3>
+
+<ul>
+  <li><%= link_to "Editar Livro", edit_book_path(@book) %></li>
+  <li><%= link_to "Deletar Livro", book_path(@book),
+                    method: :delete,
+                    data: { confirm: "Atenção: O livro será apagado. Deseja confirmar?" } %></li> %></li>
+</ul>
