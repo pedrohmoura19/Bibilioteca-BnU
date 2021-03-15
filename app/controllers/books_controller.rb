@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(title:"...", author:"...", year:"...")
+    @book = Book.new(book_params)
 
     if @book.save
       redirect_to @book

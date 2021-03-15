@@ -1,0 +1,27 @@
+<%= form_with(model: tags_book) do |form| %>
+  <% if tags_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tags_book.errors.count, "error") %> prohibited this tags_book from being saved:</h2>
+
+      <ul>
+        <% tags_book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tag_id %>
+    <%= form.text_field :tag_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.text_field :book_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

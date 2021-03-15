@@ -8,5 +8,10 @@
   <li><%= link_to "Editar Livro", edit_book_path(@book) %></li>
   <li><%= link_to "Deletar Livro", book_path(@book),
                     method: :delete,
-                    data: { confirm: "Atenção: O livro será apagado. Deseja confirmar?" } %></li> %></li>
+                    data: { confirm: "Atenção: O livro será apagado. Deseja confirmar?" } %></li> 
 </ul>
+
+
+<%= link_to "Adcionar uma nova Tag a esse livro" , new_tags_book_path(book_id: @book.id) %>
+<%= link_to "Adcionar uma Tag existente a esse livro" , tags_path %>
+

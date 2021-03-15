@@ -1,5 +1,7 @@
 class Tag < ApplicationRecord
-  belongs_to :book
+  has_many :tags_book, dependent: :destroy
+  has_many :books, :through => :tags_book
+  
   validates :name, presence:true
   validates :category,
   :inclusion => {:in =>['Semestre','Disciplina','Outros','Licenciatura','Bacharelado'],
