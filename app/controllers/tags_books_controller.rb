@@ -12,7 +12,9 @@ class TagsBooksController < ApplicationController
 
   # GET /tags_books/new
   def new
-    @tags_book = TagsBook.new
+    @tags_book = TagsBook.new(tag_id: params[:tag_id])
+    @books = Book.all
+    @tags = Tag.all
   end
 
   # GET /tags_books/1/edit
@@ -21,11 +23,10 @@ class TagsBooksController < ApplicationController
 
   # POST /tags_books or /tags_books.json
   def create
-    @tags_book = TagsBook.new(tags_book_params)
+        @tags_book = TagsBook.new(tag_id: params[:tag_id])
 
-    @tags_book = TagsBook.new(params[:tag_id])
-
-    @tags_book = TagsBook.new(params[:book_id])
+    @books = Book.all
+    @tags = Tag.all
 
     respond_to do |format|
       if @tags_book.save

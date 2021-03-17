@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :tag_id %>
-    <%= form.text_field :tag_id %>
+    <%= form.text_field :tag_id, value: params[:tag_id] %>
   </div>
 
   <div class="field">
     <%= form.label :book_id %>
-    <%= form.text_field :book_id %>
+    <%= form.text_field :book_id, value: params[:book_id] %>
   </div>
 
   <div class="actions">

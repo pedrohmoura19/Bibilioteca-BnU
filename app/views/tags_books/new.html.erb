@@ -1,5 +1,9 @@
-<h1>New Tags Book</h1>
 
-<%= render 'form', tags_book: @tags_book %>
+<% if (params[:tag_id].present? == true) && (params[:book_id].present? == false) %>
+     <%= render :partial => "book_selection", tags_book: @tags_book %>
+    
+<% elsif (params[:tag_id].present? == false) && (params[:book_id].present? == true) %>
+     <%= render :partial => "tag_selection", tags_book: @tags_book %>
+<%end%>
 
-<%= link_to 'Back', tags_books_path %>
+<%= link_to 'Voltar', tags_books_path %>

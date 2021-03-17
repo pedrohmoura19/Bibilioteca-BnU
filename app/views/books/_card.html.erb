@@ -1,0 +1,25 @@
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-img-top">
+    <%= image_tag book.photo.variant(resize_to_limit: [100, 100]) %>
+    </div> 
+    <div class="card-body">
+
+      <h4 class="card-title">
+        <%= book.title %> 
+      </h4>
+
+      <h6 class="card-text">
+      <%= book.author %> 
+      </h6>
+
+      <h6 class="card-text">
+      <%= book.year %> 
+      </h6>
+
+      <a class="">
+      <%= link_to "Ver livro" , book_path(book)  %>
+      </a>
+
+    </div>
+  </div>

@@ -1,12 +1,8 @@
 <h1>Livros da BnU</h1>
 
-<ul>
   <% @books.each do |book| %>
-    <li>
-        <%= link_to book.title, book %>">
-    </li>
+    <%= render "card", book: book %>
   <% end %>
-</ul>
 
 <%= link_to "Adcionar novo livro", new_book_path %>
 <%= link_to "Criar uma nova Tag", new_tag_path %>

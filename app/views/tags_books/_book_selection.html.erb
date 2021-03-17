@@ -1,0 +1,32 @@
+<%= form_with(model: @tags_book) do |form| %>
+    <% if @tags_book.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@tags_book.errors.count, "error") %> prohibited this tags_book from being saved:</h2>
+  
+        <ul>
+          <% @tags_book.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+        <%= form.label :book_id %>
+        
+        <select name="book_id" id="book_id">
+            <% @books.each do |book| %>
+                <option value = "<%=book.id%>"> <%=book.title%> </option>
+            <%end%>
+        </select>
+            
+    </div>
+  
+    <div class="field">
+      <%= form.hidden_field :tag_id, value: params[:tag_id] %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Adcionar tag ao Livro" %>
+    </div>
+  <% end %>

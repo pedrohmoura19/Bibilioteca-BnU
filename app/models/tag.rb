@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
-  has_many :tags_book, dependent: :destroy
-  has_many :books, :through => :tags_book
+  has_many :tags_books, dependent: :destroy
+  has_many :books, :through => :tags_books
   
   validates :name, presence:true
   validates :category,

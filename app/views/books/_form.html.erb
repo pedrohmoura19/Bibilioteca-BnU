@@ -1,30 +1,52 @@
 <%= form_with model: book do |form| %>
-    <div>
-      <%= form.label :title, "Título do Livro" %><br>
-      <%= form.text_field :title %>
-      <% book.errors.full_messages_for(:title).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
+    <div class="row pl-4 pb-4">
+      <div class="col-3">
+        <%= form.label :title, "Título do Livro" %><br>
+        <%= form.text_field :title %>
+        <% book.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+      </div>
+    
+      <div class="col">
+        <%= form.label :author, "Autor" %><br>
+        <%= form.text_field :author %>
+        <% book.errors.full_messages_for(:author).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+      </div>
     </div>
   
-    <div>
-      <%= form.label :author, "Autor" %><br>
-      <%= form.text_field :author %>
-      <% book.errors.full_messages_for(:author).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-    </div>
-  
-    <div>
-    <%= form.label :year, "Ano de Publicação" %><br>
-    <%= form.number_field :year %>
-    <% book.errors.full_messages_for(:year).each do |message| %>
+  <div class="row pl-4 pb-4" >
+    <div class="col-3">
+      <%= form.label :year, "Ano de Publicação" %><br>
+      <%= form.number_field :year %>
+      <% book.errors.full_messages_for(:year).each do |message| %>
       <div><%= message %></div>
-    <% end %>
+      <% end %>
     </div>
-  
-  
-    <div>
-      <%= form.submit "Adcionar Livro" %>
+  </div>
+      
+
+  <div class="row pl-4 pb-4" >
+    <div class="col-3">
+      <%= form.label :photo, "Foto de Capa" %><br>
+      <%= form.file_field :photo %>
     </div>
+  </div>
+
+
+  <div class="row pl-4 pb-5" >
+    <div class="col-3">
+      <%= form.label :document, "Pdf do Livro" %><br>
+      <%= form.file_field :document %>
+    </div>
+  </div>
+  
+  <div class="row pl-4 pb-5 justify-content-center "> 
+    <div div class="col-4 ">
+      <%= form.submit "Adcionar Livro" , class:"btn" %>
+    </div>
+  </div>
+
   <% end %>

@@ -1,17 +1,44 @@
-<h1><%= @book.title %></h1>
+<%= stylesheet_link_tag "/books/show" %>
 
-<h2><%= @book.author %></h2>
+<div class="container-fluid">
+  <div class="row pt-5">
+    <div class="col-4">
+      <%= image_tag @book.photo.variant(resize_to_limit: [100, 100]) %>
+    </div>  
+    <div class="col-8">
+      <div class="row">
+        <h1><%= @book.title %></h1>
+      </div>
 
-<h3><%= @book.year %><h3>
+      <div class="row">
+        <h3 class="h3-custom">Autor: <%= @book.author %></h3>
+      </div>
 
-<ul>
-  <li><%= link_to "Editar Livro", edit_book_path(@book) %></li>
-  <li><%= link_to "Deletar Livro", book_path(@book),
-                    method: :delete,
-                    data: { confirm: "Atenção: O livro será apagado. Deseja confirmar?" } %></li> 
-</ul>
+      <div class="row">
+        <h3 class="h3-custom">Ano de Publicação: <%= @book.year %><h3>
+      </div>
 
+      <div class="row pt-4">
+        <h3><%= link_to "Abrir Pdf do Livro", url_for(@book.document), class:"btn" %><h3>
+      </div>
 
-<%= link_to "Adcionar uma nova Tag a esse livro" , new_tags_book_path(book_id: @book.id) %>
-<%= link_to "Adcionar uma Tag existente a esse livro" , tags_path %>
+      <div class="row">
+        <div class="col-2">
+          <%= link_to "Editar Livro", edit_book_path(@book), class:"link-custom" %></li>
+        </div>
 
+        <div class="col-2">
+          <%= link_to "Deletar Livro", book_path(@book),
+                        method: :delete,
+                        data: { confirm: "Atenção: O livro será apagado. Deseja confirmar?" },
+                        class:"link-delete" %></li>
+        </div> 
+
+      </div>
+
+      <div class="row pt-3">
+        <%= link_to "Adcionar uma Tag a esse livro" , new_tags_book_path(book_id: @book.id) , class:"link-custom" %>
+      </div>
+    </div>
+  </div>
+</div>

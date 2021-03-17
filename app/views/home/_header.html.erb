@@ -1,1 +1,21 @@
-HEADER 
+<%= stylesheet_link_tag "_header" %>
+
+<nav class="navbar navbar-expand-lg navbar-light py-3 navbar-custom">
+  <div class="container-fluid">
+    <%= image_tag("BnU-logo.png", height:"30",  width:"50") %>
+    <%= link_to "Biblioteca BnU", root_path, class:"navbar-brand navbar-text ps-3"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Livros", root_path, class:"nav-link nav-custom ps-4" %>
+        </li>
+        <li class="nav-item">
+         <%= link_to "Tags", tags_path , class:"nav-link nav-custom ps-3" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
