@@ -2,8 +2,8 @@
 
 <div class="container-fluid">
   <div class="row pt-5">
-    <div class="col-4">
-      <%= image_tag @book.photo.variant(resize_to_limit: [100, 100]) %>
+    <div class="col-4 imgshow-custom">
+      <%= image_tag @book.photo.variant(resize_to_limit: [150 ,250 ]) %>
     </div>  
 
     <div class="col-8">
@@ -46,11 +46,11 @@
     <% @tags_books.each do |tags_book| %>
       <% @tags.each do |tag| %>
         <% if (tags_book.book_id == @book.id) && (tags_book.tag_id == tag.id)%>
-          <div class="card">
-            <div class="card-body">
-              <%=tag.name%>
+            <div class="col-2 text-center pt-4">
+              <div class="badge custom-tag">
+                <%=tag.name%>
+              </div>
             </div>
-          </div>
         <%end%>
       <%end%>    
     <%end%>                        
