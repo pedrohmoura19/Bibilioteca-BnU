@@ -5,6 +5,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @tags = Tag.all
+    @tags_books = TagsBook.all
   end
 
   def new
