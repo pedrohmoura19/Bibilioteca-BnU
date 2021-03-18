@@ -12,13 +12,9 @@
     <% end %>
   
     <div class="field">
-        <%= form.label :book_id %>
-        
-        <select name="book_id" id="book_id">
-            <% @books.each do |book| %>
-                <option value = "<%=book.id%>"> <%=book.title%> </option>
-            <%end%>
-        </select>
+        <%= form.label :book_id %>        
+        <%= form.select :book_id, @books.collect { |book| [book.title, book.id] } %>
+
             
     </div>
   

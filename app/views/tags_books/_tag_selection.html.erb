@@ -12,14 +12,9 @@
     <% end %>
   
     <div class="field">
-        <%= form.label :tag_id %>
-        
-        <select name="tag_id" id="tag_id">
-            <% @tags.each do |tag| %>
-                <option value = "<%=tag.id%>"> <%=tag.name%> </option>
-            <%end%>
-        </select>
-            
+      <%= form.label :tag_id %>
+      <%= form.select :tag_id, @tags.collect { |tag| [tag.name, tag.id] } %>
+             
     </div>
   
     <div class="field">
@@ -29,7 +24,4 @@
     <div class="actions">
       <%= form.submit "Adcionar tag ao Livro" %>
     </div>
-  <% end %>
-
-
-<h2> N CArregaisso </h2>
+ <% end %>

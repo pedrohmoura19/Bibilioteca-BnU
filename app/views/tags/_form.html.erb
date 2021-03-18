@@ -1,7 +1,7 @@
 <%= form_with(model: tag) do |form| %>
   <% if tag.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+      <h2><%= pluralize(tag.errors.count, "error") %> Essa tag não foi salva pois:</h2>
 
       <ul>
         <% tag.errors.each do |error| %>
@@ -13,14 +13,14 @@
 
   <div class="row">
     <div class="field form-group col-sm-3 py-3">
-      <% form.label :name %>
-      <%= form.text_field :name, class:"form-control", placeholder:"Nome da Tag" %>
+      <% form.label :name, "Nome da Tag" %><br>
+      <%= form.text_field :name, class:"form-control", placeholder:"Nome da Tag" %> 
     </div>
   </div>
 
   <div class="row">
     <div class="field form-group col-sm-4">
-      <%= form.label :category ,"Categoria da Tag"%>
+      <%= form.label :category ,"Categoria da Tag"%><br>
       <%= form.select :category, ["Semestre", "Disciplina", "Outros", "Licenciatura", "Bacharelado"],
       class:"form-control custom-select" %>
     </div>
