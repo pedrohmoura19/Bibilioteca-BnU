@@ -1,13 +1,13 @@
 # Considerações
 
-  * O sistema implementado possui todas as funcionalidades requeridas, como Adicionar livros e Tags, mostrá-los e editá-los.
-  * Há também a funcionalidade do armazenamento do pdf do livro, como também de sua foto de capa por meio do ActiveStorage
-  * presente no Rails. O modo de adcionar tags aos livros não é o planejado, porém cumpre a sua função. O deploy foi realiza-
-  * do no Heroku App, porém, devido a falta de experiência nessa área, algumas funcionalidades ficaram comprometidas, como é 
-  * o caso do Adicionar Livros que infelizmente não houve tempo de corrigi-la. Entretanto, localmente o sistema roda com essa
-  * funcionalidade corretamente, o que não possibilitou de encontrar o erro mais facilmente já que é a primeira vez que realizo
-  * um deploy. No mais a estilização foi pensada com as cores principais da Switch Dreams, e algumas features a mais não foram
-  * implementadas devido a falta de tempo, e experiência como dito anteriormente. Espero que gostem :) , obrigado!
+  O sistema implementado possui todas as funcionalidades requeridas, como Adicionar livros e Tags, mostrá-los e editá-los.
+  Há também a funcionalidade do armazenamento do pdf do livro, como também de sua foto de capa por meio do ActiveStorage
+  presente no Rails. O modo de adcionar tags aos livros não é o planejado, porém cumpre a sua função. O deploy foi realiza-
+  do no Heroku App, porém, devido a falta de experiência nessa área, algumas funcionalidades ficaram comprometidas, como é 
+  o caso do Adicionar Livros que infelizmente não houve tempo de corrigi-la. Entretanto, localmente o sistema roda com essa
+  funcionalidade corretamente, o que não possibilitou de encontrar o erro mais facilmente já que é a primeira vez que realizo
+  um deploy. No mais a estilização foi pensada com as cores principais da Switch Dreams, e algumas features a mais não foram
+  implementadas devido a falta de tempo, e experiência como dito anteriormente. Espero que gostem :) , obrigado!
 
 # Informações sobre o sistema
   
