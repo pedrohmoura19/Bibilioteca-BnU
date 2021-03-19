@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
 
-    has_many :tags_books
+    has_many :tags_books, dependent: :destroy
     has_many :books, :through => :tags_books
 
     has_one_attached :photo
