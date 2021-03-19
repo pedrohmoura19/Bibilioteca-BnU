@@ -1,8 +1,7 @@
 <%= form_with(model: @tags_book) do |form| %>
     <% if @tags_book.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@tags_book.errors.count, "error") %> prohibited this tags_book from being saved:</h2>
-  
+        <h1><%= pluralize(@tags_book.errors.count, "error") %> Não foi possível salvar pois:</h1>
         <ul>
           <% @tags_book.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -10,19 +9,25 @@
         </ul>
       </div>
     <% end %>
-  
-    <div class="field">
-        <%= form.label :book_id %>        
-        <%= form.select :book_id, @books.collect { |book| [book.title, book.id] } %>
 
+    <div class="row pl-4 py-4">
+      <h1>Selecione o livro que será adcionada a Tag:</h1>
+    </div>
             
+    <div class="row pl-5 pb-4">
+      <div class="col-3">
+        <%= form.label :book_id ,"Livro:" %>        
+        <%= form.select :book_id, @books.collect { |book| [book.title, book.id] } %>
+      </div>
     </div>
   
     <div class="field">
       <%= form.hidden_field :tag_id, value: params[:tag_id] %>
     </div>
   
-    <div class="actions">
-      <%= form.submit "Adcionar tag ao Livro" %>
+    <div class="row pl-4 pb-4">
+      <div class="col-3">
+        <%= form.submit "Adcionar tag ao Livro" , class:"btn" %>
+      </div>
     </div>
   <% end %>

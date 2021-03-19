@@ -1,12 +1,6 @@
 <p>
-  <strong>Nome:</strong>
-  <%= @tag.name %>
+  <h1>A tag foi criada com sucesso!</h1>
 </p>
 
-<p>
-  <strong>Categoria:</strong>
-  <%= @tag.category %>
-</p>
-
-<%= link_to 'Editar a Tag', edit_tag_path(@tag) %> |
-<%= link_to 'Retornar', tags_path %>
+<%= link_to 'Editar a Tag', edit_tag_path(@tag) , class:"link-custom" %> |
+<%= link_to 'Retornar', tags_path, class:"link-custom" %>

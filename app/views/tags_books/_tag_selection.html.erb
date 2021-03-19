@@ -10,18 +10,26 @@
         </ul>
       </div>
     <% end %>
+
+    <div class="row pl-4 py-4">
+      <h1>Selecione a Tag que será adcionada ao Livro:</h1>
+    </div>
   
-    <div class="field">
-      <%= form.label :tag_id %>
-      <%= form.select :tag_id, @tags.collect { |tag| [tag.name, tag.id] } %>
-             
+    <div class="row pl-5 pb-4">
+      <div class="col-3">
+        <%= form.label :tag_id %>
+        <%= form.select :tag_id, @tags.collect { |tag| [tag.name, tag.id] } %>
+      </div>
     </div>
   
     <div class="field">
       <%= form.hidden_field :book_id, value: params[:book_id] %>
     </div>
   
-    <div class="actions">
-      <%= form.submit "Adcionar tag ao Livro" %>
+    <div class="row pl-4 pb-4">
+      <div class="col-3">
+        <%= form.submit "Adcionar tag ao Livro", class:"btn" %>
+      </div>
     </div>
+
  <% end %>

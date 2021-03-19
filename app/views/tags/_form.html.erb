@@ -12,23 +12,24 @@
   <% end %>
 
   <div class="row">
-    <div class="field form-group col-sm-3 py-3">
-      <% form.label :name, "Nome da Tag" %><br>
-      <%= form.text_field :name, class:"form-control", placeholder:"Nome da Tag" %> 
+    <div class="col-sm-3 py-3 pl-4">
+      
+      <% form.label :name %>
+      <%= form.text_field :name, placeholder:"Nome da Tag" %> 
     </div>
   </div>
 
   <div class="row">
-    <div class="field form-group col-sm-4">
+    <div class="col-sm-4">
       <%= form.label :category ,"Categoria da Tag"%><br>
       <%= form.select :category, ["Semestre", "Disciplina", "Outros", "Licenciatura", "Bacharelado"],
-      class:"form-control custom-select" %>
+      class:"custom-select" %>
     </div>
   </div>
   
   <div class="row justify-content-center">
-    <div class="actions col-sm-3 ">
-      <%= form.submit "Criar Tag"%>
+    <div class="col-sm-3 ">
+      <%= form.submit "Criar Tag" , class:"btn" %>
     </div>
   </div>
 

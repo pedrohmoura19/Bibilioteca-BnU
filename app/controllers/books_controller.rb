@@ -41,6 +41,9 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
+
+    @tags_book = TagsBook.find_by(book_id: @book.id)
+    @tags_book.destroy
     @book.destroy
 
     redirect_to root_path
