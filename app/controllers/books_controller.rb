@@ -17,7 +17,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to @book
+      redirect_to books_path
 
     else
       render :new
